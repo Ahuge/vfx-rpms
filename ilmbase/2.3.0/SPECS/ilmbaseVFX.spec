@@ -1,9 +1,10 @@
 #This is a basic spec for ILMBase
 
-%define name                ilmbaseVFX
+%define _base()             ilmbase
+%define name                %{_base}VFX
 %define version             2.3.0
-%define _topdir             /tmp/vfx-rpms/%{name}/%{version}
-%define buildroot           ${_topdir}/%{name}-%{version}-root
+%define _topdir             /tmp/vfx-rpms/%{_base}/%{version}
+%define buildroot           %{_topdir}/%{name}-%{version}-root
 
 BuildRoot:                  %{buildroot}
 Summary:                    ILMBase libraries
