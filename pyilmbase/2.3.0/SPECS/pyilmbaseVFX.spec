@@ -27,7 +27,7 @@ Requires:                   boost-python ilmbaseVFX >= %{version}
 %build
 . /opt/rh/devtoolset-7/enable
 pip install numpy
-env LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/lib:/usr/local/lib" CPATH="$CPATH:/usr/include:/usr/local/include" ./configure --disable-namespaceversioning --with-ilmbase-prefix=/usr/local
+env LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/lib:/usr/local/lib" CPATH="$CPATH:/usr/include:/usr/local/include" ./configure --with-ilmbase-prefix=/usr/local
 make
 
 %install
