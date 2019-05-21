@@ -25,7 +25,7 @@ ILMBase is a set of libraries used most often by OpenEXR
 
 %build
 . /opt/rh/devtoolset-7/enable
-./configure --disable-namespaceversioning
+./configure
 make
 
 %install
