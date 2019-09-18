@@ -1,23 +1,23 @@
 #This is a basic spec for ILMBase
 
-%define name                PyIlmBaseVFX
+%define name                pyilmbase
 %define name_lower_base()   pyilmbase
-%define name_lower          %{name_lower_base}VFX
+%define name_lower          %{name_lower_base}
 %define version             2.3.0
 %define _topdir             /tmp/vfx-rpms/%{name_lower_base}/%{version}
 %define buildroot           ${_topdir}/%{name_lower}-%{version}-root
 
 BuildRoot:                  %{buildroot}
-Summary:                    Python Bindings for ILMBaseVFX
+Summary:                    Python Bindings for ILMBase
                             # ChangeME
 License:                    Modified BSD
 Name:                       %{name}
 Version:                    %{version}
-Release:                    2
+Release:                    3
 Source:                     %{name_lower}-%{version}.tar.gz
 Prefix:                     /usr
 Group:                      Development/VisualEffects
-Requires:                   boost-python ilmbaseVFX >= %{version}
+Requires:                   boost-python ilmbase >= %{version} python
 
 %description
 
@@ -26,8 +26,9 @@ Requires:                   boost-python ilmbaseVFX >= %{version}
 
 %build
 . /opt/rh/devtoolset-7/enable
-pip install numpy
-env LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/lib:/usr/local/lib" CPATH="$CPATH:/usr/include:/usr/local/include" ./configure --with-ilmbase-prefix=/usr/local
+pip install numpy==1.16.3
+./bootstrap
+./configure --with-ilmbase-prefix=/usr/local
 make
 
 %install
