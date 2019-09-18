@@ -1,7 +1,7 @@
 #This is a basic spec for ILMBase
 
 %define _base()             ilmbase
-%define name                %{_base}VFX
+%define name                %{_base}
 %define version             2.3.0
 %define _topdir             /tmp/vfx-rpms/%{_base}/%{version}
 %define buildroot           %{_topdir}/%{name}-%{version}-root
@@ -12,7 +12,7 @@ Summary:                    ILMBase libraries
 License:                    Modified BSD
 Name:                       %{name}
 Version:                    %{version}
-Release:                    2
+Release:                    3
 Source:                     %{name}-%{version}.tar.gz
 Prefix:                     /usr
 Group:                      Development/Visual Effects
