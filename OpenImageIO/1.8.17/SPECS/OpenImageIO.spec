@@ -30,7 +30,9 @@ They don’t support every possible way of encoding images in memory, but for a 
 
 %build
 . /opt/rh/devtoolset-7/enable
-make PYTHON_VERSION=%{python_version}
+env LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/lib:/usr/lib64:/usr/local/lib:/usr/local/lib64" \
+    CPATH="$CPATH:/usr/include:/usr/local/include" \
+    make PYTHON_VERSION=%{python_version}
 
 %install
 [[ -d $RPM_BUILD_ROOT/usr/local ]] || mkdir $RPM_BUILD_ROOT/usr/local -p
