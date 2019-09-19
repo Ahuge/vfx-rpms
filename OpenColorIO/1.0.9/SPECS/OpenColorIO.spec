@@ -19,7 +19,7 @@ Release:                    3
 Source:                     %{name_lower}-%{version}.tar.gz
 Prefix:                     /usr
 Group:                      Development/VisualEffects
-Requires:                   ilmbase >= 2.3.0 
+Requires:                   IlmBase >= 2.3.0 
 
 %description
 OpenColorIO (OCIO) is a complete color management solution geared towards motion picture production with an emphasis on visual effects and computer animation. OCIO provides a straightforward and consistent user experience across all supporting applications while allowing for sophisticated back-end configuration options suitable for high-end production usage. OCIO is compatible with the Academy Color Encoding Specification (ACES) and is LUT-format agnostic, supporting many popular formats.

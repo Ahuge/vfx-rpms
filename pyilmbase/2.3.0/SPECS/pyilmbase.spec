@@ -17,7 +17,7 @@ Release:                    3
 Source:                     %{name_lower}-%{version}.tar.gz
 Prefix:                     /usr
 Group:                      Development/VisualEffects
-Requires:                   boost-python ilmbase >= %{version} python
+Requires:                   boost-python IlmBase >= %{version} python
 
 %description
 

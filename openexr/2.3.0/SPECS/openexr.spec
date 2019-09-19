@@ -17,7 +17,7 @@ Release:                    3
 Source:                     %{name_lower}-%{version}.tar.gz
 Prefix:                     /usr
 Group:                      Development/VisualEffects
-Requires:                   zlib ilmbase >= %{version}
+Requires:                   zlib IlmBase >= %{version}
 
 %description
 OpenEXR is a high dynamic-range (HDR) image file format developed by Industrial Light & Magic for use in computer imaging applications.

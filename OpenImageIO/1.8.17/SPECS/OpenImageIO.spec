@@ -19,7 +19,7 @@ Release:                    2
 Source:                     %{name_lower}-%{version}.tar.gz
 Prefix:                     /usr
 Group:                      Development/VisualEffects
-Requires:                   zlib ilmbase OpenEXR LibRaw python
+Requires:                   zlib IlmBase OpenEXR LibRaw python
 
 %description
 OpenImageIO provides simple but powerful ImageInput and ImageOutput APIs that abstract the reading and writing of 2D image file formats. 
