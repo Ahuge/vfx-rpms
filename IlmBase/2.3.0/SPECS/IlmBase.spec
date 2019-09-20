@@ -1,6 +1,6 @@
 #This is a basic spec for ILMBase
 
-%define _base()             ilmbase
+%define _base()             IlmBase
 %define name                %{_base}
 %define version             2.3.0
 %define _topdir             /tmp/vfx-rpms/%{_base}/%{version}
