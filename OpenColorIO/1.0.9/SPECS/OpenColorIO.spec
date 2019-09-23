@@ -15,7 +15,7 @@ Summary:                    OpenColorIO (OCIO) is a complete color management so
 License:                    Modified BSD
 Name:                       %{name}
 Version:                    %{version}
-Release:                    3
+Release:                    10
 Source:                     %{name_lower}-%{version}.tar.gz
 Prefix:                     /usr
 Group:                      Development/VisualEffects

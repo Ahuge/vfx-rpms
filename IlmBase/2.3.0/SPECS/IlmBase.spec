@@ -12,7 +12,7 @@ Summary:                    ILMBase libraries
 License:                    Modified BSD
 Name:                       %{name}
 Version:                    %{version}
-Release:                    3
+Release:                    10
 Source:                     %{name}-%{version}.tar.gz
 Prefix:                     /usr
 Group:                      Development/Visual Effects

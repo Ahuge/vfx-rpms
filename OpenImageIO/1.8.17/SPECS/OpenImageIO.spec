@@ -15,7 +15,7 @@ Summary:                    OIIO is a high dynamic-range (HDR) image file format
 License:                    Modified BSD
 Name:                       %{name}
 Version:                    %{version}
-Release:                    2
+Release:                    10
 Source:                     %{name_lower}-%{version}.tar.gz
 Prefix:                     /usr
 Group:                      Development/VisualEffects
