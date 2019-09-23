@@ -3,5 +3,6 @@ sudo rpm --import http://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro
 sudo rpm -Uvh http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-1.el7.nux.noarch.rpm
 sudo yum install -y https://download1.rpmfusion.org/free/el/rpmfusion-free-release-7.noarch.rpm
 sudo yum install -y devtoolset-7
+sudo yum install python2-pip
 sudo pip install numpy
 sudo yum install -y LibRaw LibRaw-devel bzip2 bzip2-devel boost boost-* cmake libtiff openjpeg openjpeg-devel ffmpeg ffmpeg-devel ffmpeg-libs libheif libheif-devel giflib giflib-devel libpng libjpeg-devel libjpeg

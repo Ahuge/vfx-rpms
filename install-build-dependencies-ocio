@@ -1,4 +1,5 @@
 sudo yum install -y centos-release-scl
 sudo yum install -y devtoolset-7
+sudo yum install python2-pip
 sudo pip install sphinx>=1.8.5
 sudo yum install -y zlib cmake expat yaml-cpp pystring little cms 
