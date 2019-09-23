@@ -27,6 +27,7 @@ Requires:                   boost-python IlmBase >= %{version} python
 %build
 . /opt/rh/devtoolset-7/enable
 pip install numpy==1.16.3
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib:/usr/lib:/usr/local/lib64:/usr/lib64"
 ./bootstrap
 ./configure --with-ilmbase-prefix=/usr/local
 make
