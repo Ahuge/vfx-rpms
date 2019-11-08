@@ -3,7 +3,8 @@
 %define _base()             IlmBase
 %define name                %{_base}
 %define version             2.3.0
-%define _topdir             /tmp/vfx-rpms/%{_base}/%{version}
+%define _topdir             %(pwd)
+# %define _topdir             /tmp/vfx-rpms/%{_base}/%{version}
 %define buildroot           %{_topdir}/%{name}-%{version}-root
 
 BuildRoot:                  %{buildroot}

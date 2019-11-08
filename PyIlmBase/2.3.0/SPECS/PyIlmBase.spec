@@ -4,7 +4,8 @@
 %define name_lower_base()   PyIlmBase
 %define name_lower          %{name_lower_base}
 %define version             2.3.0
-%define _topdir             /tmp/vfx-rpms/%{name_lower_base}/%{version}
+%define _topdir             %(pwd)
+# %define _topdir             /tmp/vfx-rpms/%{name_lower_base}/%{version}
 %define buildroot           ${_topdir}/%{name_lower}-%{version}-root
 
 BuildRoot:                  %{buildroot}

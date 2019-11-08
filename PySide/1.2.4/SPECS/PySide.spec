@@ -4,7 +4,8 @@
 
 %define name                PySide
 %define version             1.2.4
-%define _topdir             /tmp/vfx-rpms/%{name}/%{version}
+%define _topdir             %(pwd)
+# %define _topdir             /tmp/vfx-rpms/%{name}/%{version}
 %define buildroot           ${_topdir}/%{name}-%{version}-root
 
 BuildRoot:                  %{buildroot}
