@@ -1,11 +1,10 @@
 #This is a basic spec for PySide
+# %define _topdir             /tmp/vfx-rpms/%{name}/%{version}
 %define debug_package %{nil}
-
 
 %define name                PySide
 %define version             1.2.4
 %define _topdir             %(pwd)
-# %define _topdir             /tmp/vfx-rpms/%{name}/%{version}
 %define buildroot           ${_topdir}/%{name}-%{version}-root
 
 BuildRoot:                  %{buildroot}
@@ -27,13 +26,21 @@ Python bindings for the Qt C++ library for Qt 4.8.5
 %setup -q -n %{name}-%{version}
 
 %build
-. /opt/rh/devtoolset-7/enable
-pip2 install --install-option="--prefix=$RPM_BUILD_ROOT" PySide
+if ! [ -d $RPM_BUILD_ROOT ]; then
+    mkdir $RPM_BUILD_ROOT
+fi
 
 %install
-tree ${RPM_BUILD_ROOT}
+. /opt/rh/devtoolset-7/enable
+pip2 install --ignore-installed -t "$RPM_BUILD_ROOT/usr/local" PySide --isolated --verbose --no-binary :all:
+mkdir -p "$RPM_BUILD_ROOT/usr/local/lib64/python2.7/site-packages/"
+mv "$RPM_BUILD_ROOT/usr/local/PySide" "$RPM_BUILD_ROOT/usr/local/lib64/python2.7/site-packages/"
+mv "$RPM_BUILD_ROOT/usr/local/PySide-1.2.4-py2.7.egg-info" "$RPM_BUILD_ROOT/usr/local/lib64/python2.7/site-packages/"
+mv "$RPM_BUILD_ROOT/usr/local/pysideuic" "$RPM_BUILD_ROOT/usr/local/lib64/python2.7/site-packages/"
 
 %files
 %defattr(-,root,root)
-/usr/lib
-/usr/bin
+/usr/local/bin
+/usr/local/lib64/python2.7/site-packages/PySide
+/usr/local/lib64/python2.7/site-packages/PySide-1.2.4-py2.7.egg-info
+/usr/local/lib64/python2.7/site-packages/pysideuic
