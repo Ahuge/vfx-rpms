@@ -13,7 +13,7 @@ Summary:                    Python Bindings for Qt4
 License:                    Modified BSD
 Name:                       %{name}
 Version:                    %{version}
-Release:                    1
+Release:                    3
 Source:                     %{name}-%{version}.tar.gz
 Prefix:                     /usr
 Group:                      Development
@@ -32,9 +32,11 @@ fi
 
 %install
 . /opt/rh/devtoolset-7/enable
+# pip2 install --ignore-installed -t "$RPM_BUILD_ROOT/usr/local" PySide --isolated --verbose
 pip2 install --ignore-installed -t "$RPM_BUILD_ROOT/usr/local" PySide --isolated --verbose --no-binary :all:
 mkdir -p "$RPM_BUILD_ROOT/usr/local/lib64/python2.7/site-packages/"
 mv "$RPM_BUILD_ROOT/usr/local/PySide" "$RPM_BUILD_ROOT/usr/local/lib64/python2.7/site-packages/"
+# mv "$RPM_BUILD_ROOT/usr/local/PySide-1.2.4.dist-info" "$RPM_BUILD_ROOT/usr/local/lib64/python2.7/site-packages/"
 mv "$RPM_BUILD_ROOT/usr/local/PySide-1.2.4-py2.7.egg-info" "$RPM_BUILD_ROOT/usr/local/lib64/python2.7/site-packages/"
 mv "$RPM_BUILD_ROOT/usr/local/pysideuic" "$RPM_BUILD_ROOT/usr/local/lib64/python2.7/site-packages/"
 
@@ -42,5 +44,5 @@ mv "$RPM_BUILD_ROOT/usr/local/pysideuic" "$RPM_BUILD_ROOT/usr/local/lib64/python
 %defattr(-,root,root)
 /usr/local/bin
 /usr/local/lib64/python2.7/site-packages/PySide
-/usr/local/lib64/python2.7/site-packages/PySide-1.2.4-py2.7.egg-info
+/usr/local/lib64/python2.7/site-packages/PySide-1.2.4*-info
 /usr/local/lib64/python2.7/site-packages/pysideuic
