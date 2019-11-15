@@ -13,11 +13,11 @@ Summary:                    Python Bindings for Qt4
 License:                    Modified BSD
 Name:                       %{name}
 Version:                    %{version}
-Release:                    3
+Release:                    2
 Source:                     %{name}-%{version}.tar.gz
 Prefix:                     /usr
 Group:                      Development
-Requires:                   python-devel qt-devel cmake python-pip
+Requires:                   gcc python-devel qt-devel cmake python-pip python-devel
 
 %description
 Python bindings for the Qt C++ library for Qt 4.8.5
@@ -31,12 +31,10 @@ if ! [ -d $RPM_BUILD_ROOT ]; then
 fi
 
 %install
-. /opt/rh/devtoolset-7/enable
-# pip2 install --ignore-installed -t "$RPM_BUILD_ROOT/usr/local" PySide --isolated --verbose
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/lib64"
 pip2 install --ignore-installed -t "$RPM_BUILD_ROOT/usr/local" PySide --isolated --verbose --no-binary :all:
 mkdir -p "$RPM_BUILD_ROOT/usr/local/lib64/python2.7/site-packages/"
 mv "$RPM_BUILD_ROOT/usr/local/PySide" "$RPM_BUILD_ROOT/usr/local/lib64/python2.7/site-packages/"
-# mv "$RPM_BUILD_ROOT/usr/local/PySide-1.2.4.dist-info" "$RPM_BUILD_ROOT/usr/local/lib64/python2.7/site-packages/"
 mv "$RPM_BUILD_ROOT/usr/local/PySide-1.2.4-py2.7.egg-info" "$RPM_BUILD_ROOT/usr/local/lib64/python2.7/site-packages/"
 mv "$RPM_BUILD_ROOT/usr/local/pysideuic" "$RPM_BUILD_ROOT/usr/local/lib64/python2.7/site-packages/"
 
