@@ -14,7 +14,7 @@ Summary:                    ACES ocio configs
 Name:                       %{name}
 Version:                    %{version}
 License:                    Custom
-Release:                    1
+Release:                    2
 Source:                     aces_ocio-%{version}.tar.gz
 Prefix:                     /usr/local
 Group:                      Development
@@ -32,7 +32,7 @@ pip3 install --install-option="--prefix=$RPM_BUILD_ROOT/usr/local" --verbose .
 
 %files
 %defattr(-,root,root)
-/usr/local/lib/python3.7/site-packages/aces_ocio-1.0.1-py3.7.egg-info
+/usr/local/lib/python3.7/site-packages/aces_ocio-1.1-py3.7.egg-info
 /usr/local/lib/python3.7/site-packages/aces_ocio
 /usr/local/bin/create_aces_config
 /usr/local/bin/generate_lut
